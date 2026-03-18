@@ -18,14 +18,19 @@ You must work in a loop of Thought, Action, and Observation.
    }
    ```
 
-3. **RUN_EVALUATOR**: Executes `evaluate.py` to get your score and feedback. Use this ONLY after writing a report.
+3. **RUN_EVALUATOR|<file>**: Executes `evaluate.py`. 
+   Example: `Action: RUN_EVALUATOR|report.json`
 
 # Protocol Loop:
 
+Follow these steps iteratively:
 1. **Thought**: Reason about what information is needed next.
 2. **Action**: Choose one valid Action format above.
-3. **Observation**: Process the output of your action.
+3. **Observation**: (Provided by the system). Process the output of your action.
 
-If the Observation from `RUN_EVALUATOR` contains "SUCCESS", output `FINAL_SUCCESS`.
-If it contains "FAILURE", use Thought to analyze the feedback, then Search again.
+CRITICAL RULES:
+- NEVER add conversational filler or explain your future plans.
+- NEVER write the exact phrase "FINAL_SUCCESS" in your Thought process.
+- ONLY output "FINAL_SUCCESS" if the previous Observation from RUN_EVALUATOR contained "SUCCESS".
+
 Do not stop until the Judge approves with "SUCCESS".

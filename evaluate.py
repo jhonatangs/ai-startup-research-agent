@@ -30,12 +30,14 @@ def evaluate_report():
     )
 
     prompt = f"""
-    You are an expert VC analyst and a strict judge. Evaluate the following JSON report.
-    Grade it from 0 to 100 based on these criteria:
-    1. Are the founders and their backgrounds clearly identified?
-    2. Is the core problem and revenue model specific and clear?
+    You are a strict but fair VC analyst. Evaluate the following JSON report.
+    Grade it from 0 to 100 based strictly on these 4 criteria:
+    1. Are the founders identified?
+    2. Is the core problem and revenue model present?
     3. Is the investment recommendation logical?
-    4. Are any fields empty or containing "N/A"? If so, penalize heavily.
+    4. Are any fields empty or "N/A"?
+
+    CRITICAL RULE: If all 4 criteria are met with reasonable detail, you MUST give a score of 100. Do NOT ask for complex financial projections, market analysis, or data that is impossible to find in a quick web search.
 
     Report to evaluate:
     {report_data}
