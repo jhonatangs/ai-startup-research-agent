@@ -26,8 +26,8 @@ Este sistema elimina a dependência de CLIs de agentes de terceiros, utilizando 
    ```
 5. Configure o `.env` com suas credenciais do OpenRouter:
    ```env
-   OPENROUTER_API_KEY="sua_chave_aqui"
-   OPENROUTER_BASE_URL="[https://openrouter.ai/api/v1](https://openrouter.ai/api/v1)"
+   OPENROUTER_API_KEY=sua_chave_aqui
+   OPENROUTER_BASE_URL=[https://openrouter.ai/api/v1](https://openrouter.ai/api/v1)
    ```
 6. Execute o agente passando a startup alvo:
    ```bash
